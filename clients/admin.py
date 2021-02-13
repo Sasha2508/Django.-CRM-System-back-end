@@ -5,8 +5,7 @@ from .models import *
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
     list_display = [
-        'first_name',
-        'last_name',
-        'owner'
+        'owner',
+        'general_info'
     ]
 
