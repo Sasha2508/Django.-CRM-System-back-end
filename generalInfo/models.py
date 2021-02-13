@@ -3,16 +3,7 @@ from django.db import models
 #from django.contrib.auth.models import User
 
 
-class PhoneBook(models.Model):
-    class Meta:
-        db_table='phones_book'
-        verbose_name='Phone Book'
-        verbose_name_plural='Phones Book'
 
-    phone_number = models.CharField(blank=False, null=False, max_length=20, verbose_name='Phone number')
-
-    def __str__(self):
-        return self.phone_number
 
 
 GENDER = (
@@ -93,11 +84,23 @@ class GeneralInfo(models.Model):
     state = models.CharField(default='-', choices=STATE, blank=False, null=False, max_length=2, verbose_name='State')
     postal_code = models.CharField(blank=False, null=False, max_length=14, verbose_name='Postal Code')
     country = models.CharField(blank=False, null=False, max_length=20, verbose_name='Country')
-    phone_book = models.ForeignKey(PhoneBook, blank=False, null=False, related_name='general_info', verbose_name='Phone Book', on_delete=models.CASCADE)
+    #phone_book = models.ForeignKey(PhoneBook, blank=False, null=False, related_name='general_info', verbose_name='Phone Book', on_delete=models.CASCADE)
     role = models.CharField(blank=False, null=False, max_length=10, verbose_name='Client or Employee')
 
     def __str__(self):
         return self.first_name + " " + self.last_name
+
+
+class PhoneBook(models.Model):
+    class Meta:
+        db_table='phones_book'
+        verbose_name='Phone Book'
+        verbose_name_plural='Phones Book'
+
+    phone_number = models.CharField(blank=False, null=False, max_length=20, verbose_name='Phone number')
+    general_info = models.ForeignKey(GeneralInfo, blank=False, null=False, verbose_name='General Info', on_delete=models.CASCADE)
+    def __str__(self):
+        return self.phone_number
 
 
 

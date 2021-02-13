@@ -7,8 +7,6 @@ class ClientListSerializer(serializers.ModelSerializer):
         model = Client
         fields = [
             'owner',
-            'first_name',
-            'last_name',
             'description'
         ]
 
