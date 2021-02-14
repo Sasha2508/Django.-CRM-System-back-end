@@ -10,4 +10,4 @@ Screenshot of what admin panel looks like:
 <img width="1440" alt="Screen Shot 2021-02-13 at 17 03 57" src="https://user-images.githubusercontent.com/71674667/107863988-dc0eda80-6e1d-11eb-8e84-c4dc25fd0627.png">
 
 
-The project is still being worked on. I will add the rest urls, serializers, views and documentation within the next week. The next step will be fron end and production. 
+The project is still being worked on. I will add the rest urls, serializers, views and documentation within the next week. The next step will be front end and production. 
